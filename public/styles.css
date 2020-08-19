@@ -15,18 +15,29 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    align: center;
-    background: url(headerbackground.png) no-repeat center center fixed; 
+    text-align: center;
+    background: url(images/headerbackground.png) no-repeat center center fixed; 
     background-size: cover;
     color: var(--primary-colour);
 }
 
-
 main {
-    margin: auto 1rem;
+    margin: auto;
 }
+
+.options {
+    /* margin: 0 auto; */
+    /* width: 40vw; */
+    display: inline-block;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
 .messages {
-    margin: auto 1rem;
+    margin: 1rem auto;
 }
 
 .dogpost {
