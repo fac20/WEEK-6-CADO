@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./styles.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles.css" rel="stylesheet" />
     <script src="./loginscript.js" defer></script>
     <title>Login/Sign Up</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
       <!-- links to home + login page -->
     </nav>
@@ -15,38 +15,67 @@
       <h1>B!tch, Please!</h1>
     </header>
     <main>
-      <section class="options"> <!-- options create user or login -->
+      <section class="options">
+        <!-- options create user or login -->
         <p>New pup on the block?</p>
-        <button id="signUpBtn">Sign Up</button><br>
+        <button id="signUpBtn">Sign Up</button><br />
         <p>Continue hunting</p>
         <button id="logInBtn">Log In</button>
       </section>
-      <section class="forminput"> <!-- both forms -->
+      <section class="forminput">
+        <!-- both forms -->
         <form class="forminput__signup hidden" action="/sign-up" method="POST">
           <fieldset>
-              <legend>Find your fluffy partner here:</legend>
-              <label for="username">Username:</label><br>
-              <input type="text" name="username" id="usernamesu" required placeholder="Woofus"><br> 
-              <label for="passwordsu">Password:</label><br>
-              <input type="password" name="passwordsu" id="passwordsu"required><br>
-              <label for="location">Location:</label><br>
-              <input type="location" name="location" id="location" required><br>
-              <label for="imageurl">Picture URL:</label><br>
-              <input type="url" name="imageurl" id="imageurl"><br>
-              <input type="submit">
+            <legend>Find your fluffy partner here:</legend>
+            <label for="usernamesu">Username:</label><br />
+            <input
+              type="text"
+              name="usernamesu"
+              id="usernamesu"
+              required
+              placeholder="Woofus"
+            /><br />
+            <label for="passwordsu">Password:</label><br />
+            <input
+              type="password"
+              name="passwordsu"
+              id="passwordsu"
+              nrequired
+            /><br />
+            <label for="location">Location:</label><br />
+            <input
+              type="location"
+              name="location"
+              id="location"
+              required
+            /><br />
+            <label for="imageurl">Picture URL:</label><br />
+            <input type="url" name="imageurl" id="imageurl" /><br />
+            <input type="submit" />
           </fieldset>
         </form>
-          <form class="forminput__login hidden" action="/log-in" method="POST">
-            <fieldset>
-                <legend>Continue hunting here:</legend>
-                <label for="username">Username:</label><br>
-                <input type="text" name="username" id="usernameli" required placeholder="Woofus"><br> 
-                <label for="passwordli">Password:</label><br>
-                <input type="password" name="passwordli" id="passwordli" required><br>
-                <input type="submit">
-            </fieldset>
-        </form>  
+        <form class="forminput__login hidden" action="/log-in" method="POST">
+          <fieldset>
+            <legend>Continue hunting here:</legend>
+            <label for="username">Username:</label><br />
+            <input
+              type="text"
+              name="username"
+              id="usernameli"
+              required
+              placeholder="Woofus"
+            /><br />
+            <label for="passwordli">Password:</label><br />
+            <input
+              type="password"
+              name="passwordli"
+              id="passwordli"
+              required
+            /><br />
+            <input type="submit" />
+          </fieldset>
+        </form>
       </section>
     </main>
-</body>
+  </body>
 </html>
