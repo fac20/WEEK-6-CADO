@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Login/Sign Up</title>
+</head>
+<body>
+    <nav></nav>
+    <header>
+      <h1>B!tch, Please!</h1>
+    </header>
+    <main>
+      <section class="options"> <!-- options create user or login -->
+        <p>New pup on the block?</p>
+        <button>Sign Up</button>
+        <p>Continue hunting</p>
+        <button>Log In</button>
+      </section>
+      <section class="forminput"> <!-- both forms -->
+        <form class="forminput__signup" action="/sign-up" method="POST">
+          <fieldset>
+              <legend>Find your fluffy partner here:</legend>
+              <label for="username">Username:</label><br>
+              <input type="text" name="username" id="usernamesu" required placeholder="Woofus"><br> 
+              <label for="passwordsu">Password:</label><br>
+              <input type="password" name="passwordsu" id="passwordsu"required><br>
+              <label for="location">Location:</label><br>
+              <input type="location" name="location" id="location" required><br>
+              <label for="imageurl">Picture URL:</label><br>
+              <input type="url" name="imageurl" id="imageurl"><br>
+              <input type="submit">
+          </fieldset>
+          <form class="forminput__login" action="/log-in" method="POST">
+            <fieldset>
+                <legend>Continue hunting here:</legend>
+                <label for="username">Username:</label><br>
+                <input type="text" name="username" id="usernameli" required placeholder="Woofus"><br> 
+                <label for="passwordli">Password:</label><br>
+                <input type="password" name="passwordli" id="passwordli" required><br>
+                <input type="submit">
+            </fieldset>
+      </section>
+    </main>
+</body>
+</html>
