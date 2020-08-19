@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./styles.css" rel="stylesheet">
+    <script src="./loginscript.js" defer></script>
     <title>Login/Sign Up</title>
 </head>
 <body>
-    <nav></nav>
+    <nav>
+      <!-- links to home + login page -->
+    </nav>
     <header>
       <h1>B!tch, Please!</h1>
     </header>
     <main>
       <section class="options"> <!-- options create user or login -->
         <p>New pup on the block?</p>
-        <button>Sign Up</button>
+        <button id="signUpBtn">Sign Up</button><br>
         <p>Continue hunting</p>
-        <button>Log In</button>
+        <button id="logInBtn">Log In</button>
       </section>
       <section class="forminput"> <!-- both forms -->
-        <form class="forminput__signup" action="/sign-up" method="POST">
+        <form class="forminput__signup hidden" action="/sign-up" method="POST">
           <fieldset>
               <legend>Find your fluffy partner here:</legend>
               <label for="username">Username:</label><br>
@@ -32,7 +35,7 @@
               <input type="url" name="imageurl" id="imageurl"><br>
               <input type="submit">
           </fieldset>
-          <form class="forminput__login" action="/log-in" method="POST">
+          <form class="forminput__login hidden" action="/log-in" method="POST">
             <fieldset>
                 <legend>Continue hunting here:</legend>
                 <label for="username">Username:</label><br>
