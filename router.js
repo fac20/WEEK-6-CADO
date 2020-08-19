@@ -22,12 +22,8 @@ function router(request, response) {
         getPostsHandler(request, response);
     } else if (url.includes("login") && method === "POST") {
         dataSubmission.postLoginHandler(request, response);
-    } else if (url.includes("login") && method === "GET") {
-        dataSubmission.getLoginHandler(request, response);
     } else if (url.includes("sign-up") && method === "POST") {
         dataSubmission.postSignUpHandler(request, response);
-    } else if (url.includes("sign-up") && method === "GET") {
-        dataSubmission.getSignUpHandler(request, response);
     } else {
         missingHandler(request, response);
     }
