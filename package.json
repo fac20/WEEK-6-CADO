@@ -1,7 +1,7 @@
 {
-  "name": "WEEK5-ACDO",
+  "name": "WEEK-6-CADO",
   "version": "1.0.0",
-  "description": "dog app",
+  "description": "dog and cat app",
   "main": "router.js",
   "scripts": {
     "test": "node ./test/test.js | tap-spec ",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fac20/WEEK5-ACDO.git"
+    "url": "git+https://github.com/fac20/WEEK-6-CADO.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fac20/WEEK5-ACDO/issues"
+    "url": "https://github.com/fac20/WEEK-6-CADO/issues"
   },
-  "homepage": "https://github.com/fac20/WEEK5-ACDO#readme",
+  "homepage": "https://github.com/fac20/WEEK-6-CADO#readme",
   "devDependencies": {
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2",
@@ -27,7 +27,7 @@
     "tape": "^5.0.1"
   },
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "env": "0.0.2",

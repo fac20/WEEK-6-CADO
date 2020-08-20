@@ -1,5 +1,5 @@
 # WEEK6-CADO :dog:
-Web link: 
+Web link: to posts https://btch-purrlease.herokuapp.com/, to signup/login page https://btch-purrlease.herokuapp.com/getinhere
 
 ## Introduction
 App for single dogs, the app displays dogs looking for friends/partners, users have to sign up and log in to post.
