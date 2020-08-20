@@ -21,18 +21,50 @@ function getLoginAndSignUpHandler(request, response) {
   });
 }
 
-function postLoginHandler() {}
+function postLoginHandler(request, response) {
+  getBody(request)
+  .then(body => {
+    const user = new URLSearchParams(body);
+    const username = user.get("usernameli");
+    const password = user.get("passwordli");
+    model
+      .checkUser(username) //run to model.js and find user, return username with password
+      .then(db => db.rows[0])
+      .then(dbUser => bcrypt.compare(password, dbUser.password))
+      .then(match => {
+        if (!match) throw new Error("Password mismatch");
+        response.writeHead(302, { "location": "/", "content-type": "text/html" });
+        response.end(); // put personalised message
+      })
+      .catch(error => {
+        console.error(error);
+        response.writeHead(401, { "content-type": "text/html" });
+        response.end(`
+          <h1>Password incorrect</h1>
+        `);
+      });
+  })
+  .catch(error => {
+    console.error(error);
+    response.writeHead(500, { "content-type": "text/html" });
+    response.end(`
+      <h1>Something went wrong, sorry</h1>
+    `);
+  });
+}
 
 function postSignUpHandler(request, response) {
   getBody(request)
     .then((body) => {
       const user = new URLSearchParams(body); // turns url params into object
+      console.log(user)
       const userDetails = {
         username: user.get("usernamesu"),
         password: user.get("passwordsu"),
         location: user.get("location"),
         image: user.get("imageurl"),
       };
+      console.log(userDetails);
 
       bcrypt
         .genSalt(12)
