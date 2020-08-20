@@ -7,6 +7,7 @@ const missingHandler = require("./handlers/missing");
 const getPostsHandler = require("./handlers/getPosts");
 const submitHandler = require("./handlers/submit");
 const dataSubmission = require("./handlers/dataSubmission");
+const logoutHandler = require("./handlers/logout");
 
 function router(request, response) {
     const url = request.url;
@@ -24,6 +25,8 @@ function router(request, response) {
         dataSubmission.postLoginHandler(request, response);
     } else if (url.includes("sign-up") && method === "POST") {
         dataSubmission.postSignUpHandler(request, response);
+    } else if (url.includes("logout")) {
+        logoutHandler(request, response);
     } else {
         missingHandler(request, response);
     }
