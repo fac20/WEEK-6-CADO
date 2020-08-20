@@ -30,7 +30,7 @@ function router(request, response) {
     dataSubmission.postLoginHandler(request, response);
   } else if (url === "/sign-up" && method === "POST") {
     dataSubmission.postSignUpHandler(request, response);
-  } else if (url === "/logout") {
+  } else if (url === "/logout" && method === POST) {
     logoutHandler(request, response);
   } else {
     missingHandler(request, response);
