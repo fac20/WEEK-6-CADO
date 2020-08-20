@@ -24,7 +24,7 @@
       </section>
       <section class="forminput">
         <!-- both forms -->
-        <form class="forminput__signup hidden" action="/sign-up" method="POST">
+        <form class="forminput__signup hidden" action="/sign-up" method="POST" novalidate>
           <fieldset>
               <legend>Find your fluffy partner here:</legend>
               <label for="usernamesu">Username:<span aria-hidden="true">*</span></label><br>
@@ -53,11 +53,12 @@
               <input type="submit">
           </fieldset>
         </form>
-        <form class="forminput__login hidden" action="/log-in" method="POST">
+        <form class="forminput__login hidden" action="/log-in" method="POST" novalidate>
           <fieldset>
               <legend>Continue hunting here:</legend>
-              <label for="username">Username:</label><br>
+              <label for="usernameli">Username:</label><br>
               <input type="text" name="usernameli" id="usernameli" maxlength="20" required placeholder="Woofus"><br> 
+              <div id="usernameliError"></div><br>
               <label for="passwordli">Password:</label><br>
               <input type="password" name="passwordli" id="passwordli" required><br>
               <input type="submit">

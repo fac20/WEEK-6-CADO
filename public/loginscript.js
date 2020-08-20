@@ -3,8 +3,10 @@ const signUpBtn = document.querySelector("#signUpBtn");
 const loginBtn = document.querySelector("#logInBtn");
 const signupform = document.querySelector(".forminput__signup");
 const loginform = document.querySelector(".forminput__login");
-const usernameSU = document.querySelector("#usernamesu").value;
-const usernameError = document.querySelector("#usernamesuError");
+
+const usernamesuError = document.querySelector("#usernamesuError");
+
+const usernameliError = document.querySelector("#usernameliError");
 
 //grab input elements from form
 const signupinputs = signupform.querySelectorAll("input");
@@ -20,19 +22,48 @@ const toggleHidden = (elem, elemB) => {
 signUpBtn.addEventListener("click", () => toggleHidden(signupform, loginform));
 loginBtn.addEventListener("click", () => toggleHidden(loginform, signupform));
 
-//disable native validation so we can add custom validation
-signupform.setAttribute("novalidate", "");
+// //disable native validation so we can add custom validation
+// signupform.setAttribute("novalidate", "");
 
 signupform.addEventListener("submit", (event) => {
+    const usernameSU = document.querySelector("#usernamesu").value;
     const allInputsValid = event.target.checkValidity();
-    if (checkUsernameExists(usernameSU)) { //if true username already exists
-        event.preventDefault();
-        usernameError.textContent = "Username already exists, please choose another"
-    }
-    if (!allInputsValid) {
-        event.preventDefault();
-    }
+    // event.preventDefault();
+    return checkUsernameExists(usernameSU)
+        .then(result => {
+            console.log(result)
+            if (result === true) {
+                console.log("Result came back as true")
+                event.preventDefault();
+                usernamesuError.textContent = "Username already exists, please choose another"
+            }
+            if (!allInputsValid) {
+                event.preventDefault();
+            }
+            console.log("this should run?")
+            event.preventDefault();
+        })
+        .catch(error => console.log(error));
+    // if (checkUsernameExists(usernameSU)) { //if true username already exists
+    //     event.preventDefault();
+    //     usernamesuError.textContent = "Username already exists, please choose another"
+    // }
+
 });
+//also username is case sensitive
+loginform.addEventListener("submit", (event) => {
+    const usernameLI = document.querySelector("#usernameli").value;
+    console.log(checkUsernameExists(usernameLI))
+    if (checkUsernameExists(usernameLI)) { //if false username does not exists
+        console.log("run, forrest, run")
+        event.preventDefault();
+        usernameliError.textContent = "Username does not exist, please sign up instead"
+    }
+    if (!event.target.checkValidity()) {
+        event.preventDefault();
+    }
+    }
+)
 
 //going over each input on the signup form
 //making sure that the aria label is not invalid before anything has been entered
@@ -74,6 +105,7 @@ function clearValidity(event) {
 }
 
 function checkUsernameExists(userValue) {
+    console.log("user-value", userValue)
     return fetch("/get-usernames")
       .then((res) => {
         if (!res.ok) {
@@ -84,7 +116,10 @@ function checkUsernameExists(userValue) {
       })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
+        
         const filterUser = data.filter((user) => user.username === userValue);
+        console.log(filterUser.length)
         if (filterUser.length === 1) {
             return true;
         } else {

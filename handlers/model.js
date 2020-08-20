@@ -26,13 +26,10 @@ const add = async function (name, msgtitle, message) {
 };
 //need to include check if username already exists new checkuser function
 const createUser = (userDetails) => {
-  if (!checkUser(userDetails.username)) {
     return db.query(
       "INSERT INTO users(username, password, location, image_link) VALUES($1, $2, $3, $4)",
       Object.values(userDetails)
     );
-  }
-  
 };
 
 const getUser = (username) => {
