@@ -8,7 +8,7 @@ const loginform = document.querySelector(".forminput__login");
 const signupinputs = signupform.querySelectorAll("input");
 
 const toggleHidden = (elem, elemB) => {
-    elem.classList.toggle("hidden");
+    elem.classList.toggle("hidden")
     elemB.classList.add("hidden")
     
 }
@@ -35,9 +35,7 @@ signupform.addEventListener("submit", (event) => {
 function handleInvalidInput(event) {
     const input = event.target;
     input.setAttribute("aria-invalid", true);
-    console.log(input.validationMessage);
-    console.log(input)
-    const errorId = input.id + "Error"; //errorId = input.usernameError 
+    const errorId = input.id + "Error"; 
     const errorContainer = signupform.querySelector("#" + errorId);
     
     // custom error messages
@@ -47,7 +45,7 @@ function handleInvalidInput(event) {
     } else if (input.validity.tooShort) { 
         message = "Too short! BARK! BARK!! Add another bark!!";   
     } else if (input.validity.patternMismatch) {
-        message = "B!tch Please! That doesn't match!";
+        message = "B!tch Please! That doesn't match the pattern!";
     } else if (input.validity.typeMismatch) {
         message = "BARK!!! Try again!";
     }
