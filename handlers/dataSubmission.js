@@ -50,4 +50,4 @@ function getBody(request) {
   });
 }
 
-module.exports = { postLoginHandler, postSignUpHandler};
+module.exports = { postLoginHandler, postSignUpHandler };
