@@ -27,25 +27,32 @@
         <form class="forminput__signup hidden" action="/sign-up" method="POST">
           <fieldset>
               <legend>Find your fluffy partner here:</legend>
+<<<<<<< HEAD
               <label for="username">Username:</label><br>
               <input type="text" name="usernamesu" id="usernamesu" placeholder="Woofus" aria-describedby="usernameRequirements usernamesuError" required><br> 
+=======
+              <label for="usernamesu">Username:<span aria-hidden="true">*</span></label><br>
+              <input type="text" name="usernamesu" id="usernamesu" placeholder="Woofus" aria-describedby="usernameRequirements usernamesuError" maxlength="20" required><br> 
+>>>>>>> master
               <div id="usernameRequirements">
                 Usernames must be no longer than 20 characters.
               </div><br>
               <div id="usernamesuError"></div><br>
               <label for="passwordsu">
-                Password<span aria-hidden="true">*</span>
+                Password:<span aria-hidden="true">*</span>
               </label><br>
-              <input type="password" pattern=".*\d.*" minlength="8" name="passwordsu" id="passwordsu" aria-describedby="passwordRequirements" required><br>
-              <div id="passwordRequirements">
+              <input type="password" pattern=".*\d.*" minlength="8" name="passwordsu" id="passwordsu" aria-describedby="passwordsuRequirements passwordsuError" required><br>
+              <div id="passwordsuRequirements">
                 Passwords must contain at least one letter and one number, and contain at
                 least 8 characters.
               </div><br>
-              <label for="location">Location:</label><br>
-              <input type="location" name="location" id="location" aria-describedby="locationRequirements" required><br>
+              <div id="passwordsuError"></div><br>
+              <label for="location">Location:<span aria-hidden="true">*</span></label><br>
+              <input type="location" name="location" id="location" aria-describedby="locationRequirements" maxlength="30" required><br>
               <div id="locationRequirements">
                 Locations must be no longer than 30 characters.
               </div><br>
+              <div id="locationError"></div><br>
               <label for="imageurl">Picture URL:</label><br>
               <input type="url" name="imageurl" id="imageurl"><br>
               <input type="submit">
