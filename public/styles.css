@@ -62,3 +62,29 @@ img {
     height: 0;
 }
 
+.topnav {
+    background-color: hsl(1, 85%, 65%);
+    overflow: hidden;
+  }
+  
+
+  .topnav a {
+    float: left;
+    color :hsl(48, 100%, 70%);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+ 
+  .topnav a:hover {
+    background-color: hsl(170, 40%, 60%);
+    color: black;
+  }
+  
+ 
+  .topnav a.active {
+    background-color: hsl(198, 63%, 38%);
+    color: white;
+  }
