@@ -32,4 +32,10 @@ const createUser = (userDetails) => {
   );
 };
 
-module.exports = { getPostsData, add, createUser };
+const checkUser = (username) => {
+  return db.query(
+    "SELECT * FROM users WHERE username = 'Kitty';"
+  );
+}
+
+module.exports = { getPostsData, add, createUser, checkUser };
