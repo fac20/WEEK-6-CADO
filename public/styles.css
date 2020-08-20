@@ -25,6 +25,14 @@ main {
     margin: auto;
 }
 
+#logout-button {
+     margin-top: 1rem;
+     margin-right: 1rem;
+     position:absolute;
+     top:0;
+     right:0;
+  }
+
 .options {
     /* margin: 0 auto; */
     /* width: 40vw; */
