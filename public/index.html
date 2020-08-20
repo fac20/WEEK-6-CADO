@@ -8,14 +8,16 @@
     <script src="./public/script.js" defer></script>
 </head>
 <body>
+    <nav class="topnav">
+        <a href="/getinhere">Log In / Sign Up</a>
+        <a class="active" href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </nav>
     <header>
         <h1>B!tch, Purr-lease!</h1>
         <h2>Dogs deserve to find love too!</h2>
     </header>
     <main>
-        <form action="/logout" method="POST">
-            <button type="submit" id="logout-button">Logout</button>
-          </form>
         <section class="forminput">
         <h2>Find Love: Fill in your details!</h2>
             <form class="forminput__form" action="/submit" method="POST">
