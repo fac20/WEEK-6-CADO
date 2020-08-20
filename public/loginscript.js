@@ -34,9 +34,9 @@ function handleInvalidInput(event) {
     const input = event.target;
     input.setAttribute("aria-invalid", true);
     console.log(input.validationMessage);
-    // const errorId = input.id + "Error"; errorId = input.usernameError 
-    // const errorContainer = signupform.querySelector("#" + errorId);
-    // errorContainer.textContent = input.validationMessage;
+    const errorId = input.id + "Error"; 
+    const errorContainer = signupform.querySelector("#" + errorId);
+    errorContainer.textContent = input.validationMessage;
 }
 
 inputs.forEach((input) => {
