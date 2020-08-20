@@ -38,7 +38,7 @@ const getUser = (username) => {
   
 }
 
-
+//SECURITY CONCERN
 const getAllUsernames = () => {
   return db.query("SELECT username FROM users");
 }

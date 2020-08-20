@@ -26,39 +26,44 @@ loginBtn.addEventListener("click", () => toggleHidden(loginform, signupform));
 // signupform.setAttribute("novalidate", "");
 
 signupform.addEventListener("submit", (event) => {
-    const usernameSU = document.querySelector("#usernamesu").value;
     const allInputsValid = event.target.checkValidity();
+    if (!allInputsValid) {
+        event.preventDefault();
+    }
+
+
+    // const usernameSU = document.querySelector("#usernamesu").value;
+    // const allInputsValid = event.target.checkValidity();
     // event.preventDefault();
-    return checkUsernameExists(usernameSU)
-        .then(result => {
-            console.log(result)
-            if (result === true) {
-                console.log("Result came back as true")
-                event.preventDefault();
-                usernamesuError.textContent = "Username already exists, please choose another"
-            }
-            if (!allInputsValid) {
-                event.preventDefault();
-            }
-            console.log("this should run?")
-            event.preventDefault();
-        })
-        .catch(error => console.log(error));
+    // return checkUsernameExists(usernameSU)
+    //     .then(result => {
+    //         console.log(result)
+    //         if (result === true || !allInputsValid) {
+    //             console.log("Result came back as true")
+    //             usernamesuError.textContent = "Username already exists, please choose another"
+    //         } else {
+    //             signupform.submit();
+    //             signupform.reset();
+    //             console.log("resetiing!")
+    //         }
+    //     })
+    //     .catch(error => console.log(error));
     // if (checkUsernameExists(usernameSU)) { //if true username already exists
     //     event.preventDefault();
     //     usernamesuError.textContent = "Username already exists, please choose another"
     // }
-
 });
-//also username is case sensitive
+
+
+//also username is case sensitive & there is a bug!
 loginform.addEventListener("submit", (event) => {
-    const usernameLI = document.querySelector("#usernameli").value;
-    console.log(checkUsernameExists(usernameLI))
-    if (checkUsernameExists(usernameLI)) { //if false username does not exists
-        console.log("run, forrest, run")
-        event.preventDefault();
-        usernameliError.textContent = "Username does not exist, please sign up instead"
-    }
+    // const usernameLI = document.querySelector("#usernameli").value;
+    // console.log(checkUsernameExists(usernameLI))
+    // if (checkUsernameExists(usernameLI)) { //if false username does not exists
+    //     console.log("run, forrest, run")
+    //     event.preventDefault();
+    //     usernameliError.textContent = "Username does not exist, please sign up instead"
+    // }
     if (!event.target.checkValidity()) {
         event.preventDefault();
     }
