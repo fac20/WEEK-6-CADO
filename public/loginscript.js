@@ -5,22 +5,24 @@ const signupform = document.querySelector(".forminput__signup");
 const loginform = document.querySelector(".forminput__login");
 
 //grab input elements from form
-const inputs = signupform.querySelectorAll("input");
+const signupinputs = signupform.querySelectorAll("input");
 
-const toggleHidden = elem => {
+const toggleHidden = (elem, elemB) => {
     elem.classList.toggle("hidden");
+    elemB.classList.add("hidden")
+    
 }
 
 //forminput__signup, forminput__login
 //toggle form appearance from hidden if button is clicked
-signUpBtn.addEventListener("click", () => toggleHidden(signupform));
-loginBtn.addEventListener("click", () => toggleHidden(loginform));
+signUpBtn.addEventListener("click", () => toggleHidden(signupform, loginform));
+loginBtn.addEventListener("click", () => toggleHidden(loginform, signupform));
 
 //disable native validation so we can add custom validation
 signupform.setAttribute("novalidate", "");
 
 signupform.addEventListener("submit", (event) => {
-    const allInputsValid = signupform.checkValidity();
+    const allInputsValid = event.target.checkValidity();
     if (!allInputsValid) {
         event.preventDefault();
     }
@@ -34,14 +36,37 @@ function handleInvalidInput(event) {
     const input = event.target;
     input.setAttribute("aria-invalid", true);
     console.log(input.validationMessage);
-    // const errorId = input.id + "Error"; errorId = input.usernameError 
-    // const errorContainer = signupform.querySelector("#" + errorId);
-    // errorContainer.textContent = input.validationMessage;
+    console.log(input)
+    const errorId = input.id + "Error"; //errorId = input.usernameError 
+    const errorContainer = signupform.querySelector("#" + errorId);
+    
+    // custom error messages
+    let message = "";
+    if (input.validity.valueMissing) {
+        message = "Bark! Enter a valid email!";
+    } else if (input.validity.tooShort) { 
+        message = "Too short! BARK! BARK!!";   
+    } else if (input.validity.patternMismatch) {
+        message = "B!tch Please! That doesn't match!";
+    } else if (input.validity.typeMismatch) {
+        message = "BARK!!! Try again!";
+    }
+
+    errorContainer.textContent = message;
 }
 
-inputs.forEach((input) => {
+signupinputs.forEach((input) => {
     input.setAttribute("aria-invalid", false);
     input.addEventListener("invalid", handleInvalidInput);
+    input.addEventListener("input", clearValidity)
 });
-  
+
+function clearValidity(event) {
+    const input = event.target;
+    input.setAttribute("aria-invalid", "false");
+    const errorId = input.id + "Error";
+    const errorContainer = signupform.querySelector("#" + errorId);
+    errorContainer.textContent = "";
+}
+
 
