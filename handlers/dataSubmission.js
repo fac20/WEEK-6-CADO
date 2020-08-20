@@ -75,11 +75,12 @@ function postSignUpHandler(request, response) {
         })
         .then(() => {
           //build the cookie here
+          const cookie = sign(userDetails, SECRET);
           response.writeHead(302, { 
             //send the cookie here
             location: "/",
+            'Set-Cookie': `jwt=${cookie}; HttpOnly; logged_in=true`
           });
-          //console.log(userDetails, userDetails.username);
           response.end(); // try later to see if we can add personalised message
         })
         .catch((error) => {
