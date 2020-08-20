@@ -31,7 +31,7 @@ function postSignUpHandler(request, response) {
                   response.writeHead(500, { "content-type" : "text/html"})
                   response.end(`<h1>Holy poop on a cracker! Something went wrong!</h1>`)
                 })
-        })
+        }) //had to add a bracket here, hopefully will not break anything
         .catch(error => {
           console.error(error);
           response.writeHead(500, {"content-type" : "text/html"})
