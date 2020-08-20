@@ -18,7 +18,7 @@ function postSignUpHandler(request, response) {
             bcrypt
                 .genSalt(12)
                 .then(salt => bcrypt.hash(password, salt))
-                .then(hash => model.creatUser({ email, password: hash})
+                .then(hash => model.creatUser({ email, password: hash}))
                 .then(() => {
                   response.writeHead(
                     200, 
