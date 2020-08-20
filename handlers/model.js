@@ -34,7 +34,7 @@ const createUser = (userDetails) => {
 
 const checkUser = (username) => {
   return db.query(
-    "SELECT * FROM users WHERE username = 'Kitty';"
+    `SELECT * FROM users WHERE username = '${username}';`
   );
 }
 
