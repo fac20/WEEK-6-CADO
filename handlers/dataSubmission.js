@@ -2,6 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const model = require("./model");
+const { parse } = require('cookie');
+const { sign, verify } = require('jsonwebtoken');
+
+const SECRET = process.env.SECRET;
 
 function getLoginAndSignUpHandler(request, response) {
   const filePath = path.join(__dirname, "../public/login.html");
@@ -38,7 +42,12 @@ function postSignUpHandler(request, response) {
           model.createUser(userDetails);
         })
         .then(() => {
-          response.writeHead(302, { location: "/" });
+          //build the cookie here
+          response.writeHead(302, { 
+            //send the cookie here
+            location: "/",
+            console.log(userDetails, userDetails.username);
+          });
           response.end(); // try later to see if we can add personalised message
         })
         .catch((error) => {
