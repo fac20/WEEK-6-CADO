@@ -24,20 +24,12 @@ const add = async function (name, msgtitle, message) {
     console.error(e);
   }
 };
-
-const userDetails = {
-  username: user.get("usernamesu"),
-  password: user.get("passwordsu"),
-  location: user.get("location"),
-  image: user.get("imageurl"),
-};
-
+//need to include check if username already exists new checkuser function
 const createUser = (userDetails) => {
   return db.query(
-    "INSERT INTO users(username, password, location, image) VALUES($1, $2, $3, $4)", Object.values(
-      userDetails
-    )
+    "INSERT INTO users(username, password, location, image_link) VALUES($1, $2, $3, $4)",
+    Object.values(userDetails)
+  );
 };
-
 
 module.exports = { getPostsData, add, createUser };

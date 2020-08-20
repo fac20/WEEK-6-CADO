@@ -3,6 +3,20 @@ const path = require("path");
 const bcrypt = require("bcryptjs");
 const model = require("./model");
 
+function getLoginAndSignUpHandler(request, response) {
+  const filePath = path.join(__dirname, "../public/login.html");
+  fs.readFile(filePath, (error, file) => {
+    if (error) {
+      console.error(error);
+      response.writeHead(404, { "content-type": "text/html" });
+      response.end("<h1>Not Found</h1>");
+    } else {
+      response.writeHead(200, { "content-type": "text/html" });
+      response.end(file);
+    }
+  });
+}
+
 function postLoginHandler() {}
 
 function postSignUpHandler(request, response) {
@@ -18,13 +32,13 @@ function postSignUpHandler(request, response) {
 
       bcrypt
         .genSalt(12)
-        .then((salt) => bcrypt.hash(password, salt))
+        .then((salt) => bcrypt.hash(userDetails.password, salt))
         .then((hash) => {
           userDetails.password = hash;
           model.createUser(userDetails);
         })
         .then(() => {
-          response.writeHead(200, { location: "/" });
+          response.writeHead(302, { location: "/" });
           response.end(); // try later to see if we can add personalised message
         })
         .catch((error) => {
@@ -54,4 +68,8 @@ function getBody(request) {
   });
 }
 
-module.exports = { postLoginHandler, postSignUpHandler };
+module.exports = {
+  postLoginHandler,
+  postSignUpHandler,
+  getLoginAndSignUpHandler,
+};
