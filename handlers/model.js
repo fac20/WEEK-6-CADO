@@ -26,16 +26,21 @@ const add = async function (name, msgtitle, message) {
 };
 //need to include check if username already exists new checkuser function
 const createUser = (userDetails) => {
-  return db.query(
-    "INSERT INTO users(username, password, location, image_link) VALUES($1, $2, $3, $4)",
-    Object.values(userDetails)
-  );
+    return db.query(
+      "INSERT INTO users(username, password, location, image_link) VALUES($1, $2, $3, $4)",
+      Object.values(userDetails)
+    );
 };
 
-const checkUser = (username) => {
-  return db.query(
-    `SELECT * FROM users WHERE username = '${username}';`
-  );
+const getUser = (username) => {
+  //checks if username exists return boolean
+  return db.query("SELECT * FROM users WHERE username = $1", [username])
+  
 }
 
-module.exports = { getPostsData, add, createUser, checkUser };
+
+const getAllUsernames = () => {
+  return db.query("SELECT username FROM users");
+}
+
+module.exports = { getPostsData, add, createUser, getUser, getAllUsernames };
