@@ -3,6 +3,8 @@ const signUpBtn = document.querySelector("#signUpBtn");
 const loginBtn = document.querySelector("#logInBtn");
 const signupform = document.querySelector(".forminput__signup");
 const loginform = document.querySelector(".forminput__login");
+const usernameSU = document.querySelector("#usernamesu").value;
+const usernameError = document.querySelector("#usernamesuError");
 
 //grab input elements from form
 const signupinputs = signupform.querySelectorAll("input");
@@ -23,6 +25,10 @@ signupform.setAttribute("novalidate", "");
 
 signupform.addEventListener("submit", (event) => {
     const allInputsValid = event.target.checkValidity();
+    if (checkUsernameExists(usernameSU)) { //if true username already exists
+        event.preventDefault();
+        usernameError.textContent = "Username already exists, please choose another"
+    }
     if (!allInputsValid) {
         event.preventDefault();
     }
@@ -67,4 +73,24 @@ function clearValidity(event) {
     errorContainer.textContent = "";
 }
 
+function checkUsernameExists(userValue) {
+    return fetch("/get-usernames")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Server error");
+        } else {
+          return res;
+        }
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        const filterUser = data.filter((user) => user.username === userValue);
+        if (filterUser.length === 1) {
+            return true;
+        } else {
+            return false;
+        }
+      })
+      .catch((error) => console.log(error));
+  }
 

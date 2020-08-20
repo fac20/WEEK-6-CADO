@@ -23,8 +23,9 @@ function postLoginHandler(request, response) {
     const user = new URLSearchParams(body);
     const username = user.get("usernameli");
     const password = user.get("passwordli");
+    // check User
     model
-      .checkUser(username) //run to model.js and find user, return username with password
+      .getUser(username) //run to model.js and find user, return username with password
       .then(db => db.rows[0])
       .then(dbUser => bcrypt.compare(password, dbUser.password))
       .then(match => {

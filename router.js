@@ -1,10 +1,11 @@
-//we need handlers for home, publ{}ic, missing, submit
+//we need handlers for home, public, missing, submit
 //also for the model so the server can talk to the database?
 
 const homeHandler = require("./handlers/home");
 const publicHandler = require("./handlers/public");
 const missingHandler = require("./handlers/missing");
 const getPostsHandler = require("./handlers/getPosts");
+const getUsernamesHandler = require("./handlers/getUsernames");
 const submitHandler = require("./handlers/submit");
 const dataSubmission = require("./handlers/dataSubmission");
 
@@ -20,6 +21,8 @@ function router(request, response) {
     submitHandler(request, response);
   } else if (url === "/get-posts") {
     getPostsHandler(request, response);
+  } else if (url === "/get-usernames") {
+    getUsernamesHandler(request, response);
   } else if (url === "/getinhere" && method === "GET") {
     dataSubmission.getLoginAndSignUpHandler(request, response);
   } else if (url === "/log-in" && method === "POST") {
