@@ -26,11 +26,23 @@
           <fieldset>
               <legend>Find your fluffy partner here:</legend>
               <label for="username">Username:</label><br>
-              <input type="text" name="username" id="usernamesu" required placeholder="Woofus"><br> 
-              <label for="passwordsu">Password:</label><br>
-              <input type="password" name="passwordsu" id="passwordsu"required><br>
+              <input type="text" name="username" id="usernamesu" placeholder="Woofus" aria-describedby="usernameRequirements" required><br> 
+              <div id="usernameRequirements">
+                Usernames must be no longer than 20 characters.
+              </div><br>
+              <label for="passwordsu">
+                Password<span aria-hidden="true">*</span>
+              </label><br>
+              <input type="password" pattern=".*\d.*" minlength="8" name="passwordsu" id="passwordsu" aria-describedby="passwordRequirements" required><br>
+              <div id="passwordRequirements">
+                Passwords must contain at least one letter and one number, and contain at
+                least 8 characters.
+              </div><br>
               <label for="location">Location:</label><br>
-              <input type="location" name="location" id="location" required><br>
+              <input type="location" name="location" id="location" aria-describedby="locationRequirements" required><br>
+              <div id="locationRequirements">
+                Locations must be no longer than 30 characters.
+              </div><br>
               <label for="imageurl">Picture URL:</label><br>
               <input type="url" name="imageurl" id="imageurl"><br>
               <input type="submit">
