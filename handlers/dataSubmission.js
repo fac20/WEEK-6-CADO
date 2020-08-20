@@ -62,7 +62,7 @@ function postSignUpHandler(request, response) {
       console.error(error);
       response.writeHead(500, { "content-type": "text/html" });
       response.end(
-        `<h1>Bark! Bark!! something went wrong get me out of here!!!!</h1>`
+        `<h1>Bark! Bark!! Something went wrong get me out of here!!!!</h1>`
       );
     });
 }
