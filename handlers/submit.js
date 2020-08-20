@@ -14,7 +14,8 @@ function submitHandler(request, response) {
     });
     request.on("end", () => {
         const data = new URLSearchParams(body);
-        // const name = data.get("name"); 
+        const msgtitle = data.get("msgtitle");
+        const message = data.get("message");
         if (!request.headers.cookie) return response.end("<h1>Sign in first!</h1>");
         
         const { jwt } = parse(request.headers.cookie);
@@ -25,30 +26,23 @@ function submitHandler(request, response) {
           if (err) {
             return response.end("<h1>Sign in first!</h1>");
           } else {
-            const message = `Your username is: ${jwt.username}`;
-            response.writeHead(
-              200,
-              {
-                'Content-Type': 'text/plain',
-                'Content-Length': message.length
-              }
-            );
-        return response.end(message);
+            const username = jwt.username;
+            model.add(username, msgtitle, message)
+            response.writeHead(302, { "location": "/" });
+            return response.end();
 
-        // const msgtitle = data.get("msgtitle");
-        // const message = data.get("message");
+        // username --> id from users. plug that in with the mesage, and title, with user_id as the id from users
+
+        
         // // const date = data.get("date");
-        // console.log(data)
-
-        // model.add(name, msgtitle, message);
+        
 
         // // (if (db.query("SELECT username FROM users WHERE $1"))
         // //     IF boolean-expression THEN
         // //     statements
         // // END IF;
 
-        // response.writeHead(302, { "location": "/" });
-        // response.end();
+        
 
     }});
     request.on("error", error => {
