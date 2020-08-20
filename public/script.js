@@ -1,5 +1,4 @@
-
-
+const logoutBtn = document.querySelector("#logout-button");
 const submitBtn = document.querySelector("input[type=submit]");
 
 // fetchin for json data

@@ -25,9 +25,18 @@ main {
     margin: auto;
 }
 
+#logout-button {
+     margin-top: 1rem;
+     margin-right: 1rem;
+     position:absolute;
+     top:0;
+     right:0;
+  }
+
 .options {
-    /* margin: 0 auto; */
-    /* width: 40vw; */
+    margin: 0 auto;
+    width: 40vw;
+    align: center;
     display: inline-block;
     text-align: center;
 }
@@ -62,14 +71,25 @@ img {
     height: 0;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
 .topnav {
     background-color: hsl(1, 85%, 65%);
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
   
 
   .topnav a {
     float: left;
+    display: block;
     color :hsl(48, 100%, 70%);
     text-align: center;
     padding: 14px 16px;
