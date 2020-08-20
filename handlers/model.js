@@ -33,9 +33,7 @@ const createUser = (userDetails) => {
 };
 
 const checkUser = (username) => {
-  return db.query(
-    `SELECT * FROM users WHERE username = '${username}';`
-  );
+  return db.query("SELECT * FROM users WHERE username = $1", username);
 }
 
 module.exports = { getPostsData, add, createUser, checkUser };
