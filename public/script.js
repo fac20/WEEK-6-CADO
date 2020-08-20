@@ -54,11 +54,6 @@ function createPosts(object) {
 
 }
 
-//event listener for logout button
-logoutBtn.addEventListener("click", function(){
-  console.log("I would like to log out of the site now");
-});
-
 // event listener for reload
 window.addEventListener("load", getPosts);
 
