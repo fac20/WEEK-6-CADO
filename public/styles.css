@@ -65,11 +65,15 @@ img {
 .topnav {
     background-color: hsl(1, 85%, 65%);
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
   
 
   .topnav a {
     float: left;
+    display: block;
     color :hsl(48, 100%, 70%);
     text-align: center;
     padding: 14px 16px;
