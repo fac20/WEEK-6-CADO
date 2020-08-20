@@ -12,3 +12,14 @@ const toggleHidden = elem => {
 //toggle form appearance from hidden if button is clicked
 signUpBtn.addEventListener("click", () => toggleHidden(signupform));
 loginBtn.addEventListener("click", () => toggleHidden(loginform));
+
+//disable native validation so we can add custom validation
+signupform.setAttribute("novalidate", "");
+
+signupform.addEventListener("submit", (event) => {
+    const allInputsValid = signupform.checkValidity();
+    if (!allInputsValid) {
+        event.preventDefault();
+    }
+})
+
