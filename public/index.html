@@ -13,7 +13,9 @@
         <h2>Dogs deserve to find love too!</h2>
     </header>
     <main>
-        <button type="button" id="logout-button">Logout</button>
+        <form action="/logout" method="POST">
+            <button type="submit" id="logout-button">Logout</button>
+          </form>
         <section class="forminput">
         <h2>Find Love: Fill in your details!</h2>
             <form class="forminput__form" action="/submit" method="POST">
