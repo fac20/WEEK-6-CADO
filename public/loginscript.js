@@ -45,7 +45,7 @@ function handleInvalidInput(event) {
     if (input.validity.valueMissing) {
         message = "Bark! Enter a valid email!";
     } else if (input.validity.tooShort) { 
-        message = "Too short! BARK! BARK!!";   
+        message = "Too short! BARK! BARK!! Add another bark!!";   
     } else if (input.validity.patternMismatch) {
         message = "B!tch Please! That doesn't match!";
     } else if (input.validity.typeMismatch) {
