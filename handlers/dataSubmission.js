@@ -46,8 +46,8 @@ function postSignUpHandler(request, response) {
           response.writeHead(302, { 
             //send the cookie here
             location: "/",
-            console.log(userDetails, userDetails.username);
           });
+          //console.log(userDetails, userDetails.username);
           response.end(); // try later to see if we can add personalised message
         })
         .catch((error) => {
