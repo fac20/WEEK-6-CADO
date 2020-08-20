@@ -57,14 +57,13 @@ function postSignUpHandler(request, response) {
   getBody(request)
     .then((body) => {
       const user = new URLSearchParams(body); // turns url params into object
-      console.log(user)
+
       const userDetails = {
         username: user.get("usernamesu"),
         password: user.get("passwordsu"),
         location: user.get("location"),
         image: user.get("imageurl"),
       };
-      console.log(userDetails);
 
       bcrypt
         .genSalt(12)
