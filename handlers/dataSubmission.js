@@ -27,13 +27,26 @@ function postLoginHandler(request, response) {
     const user = new URLSearchParams(body);
     const username = user.get("usernameli");
     const password = user.get("passwordli");
+    
+    //create a logged in user object from body here
+    const loggedInUser = {
+      username: username
+    }
+
     model
       .checkUser(username) //run to model.js and find user, return username with password
       .then(db => db.rows[0])
       .then(dbUser => bcrypt.compare(password, dbUser.password))
       .then(match => {
         if (!match) throw new Error("Password mismatch");
-        response.writeHead(302, { "location": "/", "content-type": "text/html" });
+        //create the cookie here
+        const logInCookie = sign(loggedInUser, SECRET);
+        response.writeHead(302, { 
+          "location": "/", 
+          "content-type": "text/html",
+          //send cookie here
+          'Set-Cookie': `jwt=${logInCookie}; HttpOnly; logged_in=true`
+         });
         response.end(); // put personalised message
       })
       .catch(error => {
@@ -74,11 +87,11 @@ function postSignUpHandler(request, response) {
         })
         .then(() => {
           //build the cookie here
-          const cookie = sign(userDetails, SECRET);
+          const signUpCookie = sign(userDetails, SECRET);
           response.writeHead(302, { 
             //send the cookie here
             location: "/",
-            'Set-Cookie': `jwt=${cookie}; HttpOnly; logged_in=true`
+            'Set-Cookie': `jwt=${signUpCookie}; HttpOnly; logged_in=true`
           });
           response.end(); // try later to see if we can add personalised message
         })
