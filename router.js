@@ -9,24 +9,26 @@ const submitHandler = require("./handlers/submit");
 const dataSubmission = require("./handlers/dataSubmission");
 
 function router(request, response) {
-    const url = request.url;
-    const method = request.method;
+  const url = request.url;
+  const method = request.method;
 
-    if (url === "/") {
-        homeHandler(request, response);
-    } else if (url.includes("public")) {
-        publicHandler(request, response);
-    } else if (url.includes("submit") && method === "POST") {
-        submitHandler(request, response);
-    } else if (url.includes("get-posts")) {
-        getPostsHandler(request, response);
-    } else if (url.includes("login") && method === "POST") {
-        dataSubmission.postLoginHandler(request, response);
-    } else if (url.includes("sign-up") && method === "POST") {
-        dataSubmission.postSignUpHandler(request, response);
-    } else {
-        missingHandler(request, response);
-    }
+  if (url === "/") {
+    homeHandler(request, response);
+  } else if (url.includes("public")) {
+    publicHandler(request, response);
+  } else if (url === "/submit" && method === "POST") {
+    submitHandler(request, response);
+  } else if (url === "/get-posts") {
+    getPostsHandler(request, response);
+  } else if (url === "/getinhere" && method === "GET") {
+    dataSubmission.getLoginAndSignUpHandler(request, response);
+  } else if (url === "/log-in" && method === "POST") {
+    dataSubmission.postLoginHandler(request, response);
+  } else if (url === "/sign-up" && method === "POST") {
+    dataSubmission.postSignUpHandler(request, response);
+  } else {
+    missingHandler(request, response);
+  }
 }
 
 module.exports = router;
