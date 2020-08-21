@@ -1,166 +1,162 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    --primary-colour: hsl(1, 85%, 65%);
-    --secondary-colour: hsl(48, 100%, 70%);
-    --font-colour: hsl(198, 63%, 38%);
-    --secondfont-colour: hsl(170, 40%, 60%);
-    /* cursor: url('chicken.png'), auto; */
-    --title-font: 'Arvo', serif;
-    --text-font: 'Barlow', sans-serif;
-    background-color: hsl(66, 81%, 94%);
-    min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	--primary-colour: hsl(1, 85%, 65%);
+	--secondary-colour: hsl(48, 100%, 70%);
+	--font-colour: hsl(198, 63%, 38%);
+	--secondfont-colour: hsl(170, 40%, 60%);
+	/* cursor: url('chicken.png'), auto; */
+	--title-font: 'Arvo', serif;
+	--text-font: 'Barlow', sans-serif;
+	background-color: hsl(66, 81%, 94%);
+	min-height: 100vh;
 }
 
 header {
-    margin: auto;
-    padding: 2rem;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    background: url(images/headerbackground.png) no-repeat center center fixed; 
-    background-size: cover;
-    color: var(--primary-colour);
+	margin: auto;
+	padding: 2rem;
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	background: url(images/headerbackground.png) no-repeat center center fixed;
+	background-size: cover;
+	color: var(--primary-colour);
 }
 
-h1, h2, h3, nav {
-    font-family: var(--title-font);
+h1,
+h2,
+h3,
+nav {
+	font-family: var(--title-font);
 }
 
 p {
-    font-family: var(--text-font);
+	font-family: var(--text-font);
 }
 
 form {
-    margin: auto;
+	margin: auto;
 }
 
-
 main {
-    margin: auto;
+	margin: auto;
 }
 
 .options {
-    margin: 0 auto;
-    width: 40vw;
-    align: center;
-    display: inline-block;
-    text-align: center;
+	margin: 0 auto;
+	width: 40vw;
+	align: center;
+	display: inline-block;
+	text-align: center;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 .messages {
-    margin: 1rem auto;
+	margin: 1rem auto;
 }
 
 h2 {
-    text-align: center;
+	text-align: center;
 }
 
 fieldset {
-    margin: 1rem auto;
-    border: 0.2rem solid var(--font-colour);
-    border-radius: 1rem;
-    padding: 1rem;
-    font-family: var(--text-font);
-
+	margin: 1rem auto;
+	border: 0.2rem solid var(--font-colour);
+	border-radius: 1rem;
+	padding: 1rem;
+	font-family: var(--text-font);
 }
 .options {
-    display: block;
+	display: block;
 }
 
 .dogpost {
-    margin: 1rem auto;
-    border: 0.2rem solid var(--primary-colour);
-    border-radius: 1rem;
-    padding: 1rem;
+	margin: 1rem auto;
+	border: 0.2rem solid var(--primary-colour);
+	border-radius: 1rem;
+	padding: 1rem;
 }
 
 /* Desktop styles */
-@media only screen and (min-width: 768px){
-    .forminput {
-        width: 40vw;
-        margin: auto;
-    }
-    .dogpost {
-        max-width: 40vw;
-    }
-    
+@media only screen and (min-width: 768px) {
+	.forminput {
+		width: 40vw;
+		margin: auto;
+	}
+	.dogpost {
+		max-width: 40vw;
+	}
 }
 
 img {
-    max-height: 4rem;
+	max-height: 4rem;
 }
 
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	display: flex;
+	justify-content: space-between;
 }
 
 .topnav {
-    background-color: hsl(1, 85%, 65%);
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
+	background-color: hsl(1, 85%, 65%);
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
-  
 
 .topnav a {
-    float: left;
-    display: block;
-    color :hsl(48, 100%, 70%);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-  
- 
-.topnav a:hover {
-    background-color: hsl(170, 40%, 60%);
-    color: black;
-}
-  
- 
-.topnav a.active {
-    background-color: hsl(198, 63%, 38%);
-    color: white;
+	float: left;
+	display: block;
+	color: hsl(48, 100%, 70%);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
 }
 
+.topnav a:hover {
+	background-color: hsl(170, 40%, 60%);
+	color: black;
+}
+
+.topnav a.active {
+	background-color: hsl(198, 63%, 38%);
+	color: white;
+}
 
 .dogpost__text__content,
 .dogpost__img {
-    display: inline-block;
+	display: inline-block;
 }
 
 footer {
-    background-color: var( --primary-colour);
-    margin-top: 1.5rem;
-    left: 0;
-    bottom: 0;
-    text-align: center;
-    padding: 0.05rem;
-    width: 100vw;
-    font-size: 0.7rem;
-    position: ;
+	background-color: var(--primary-colour);
+	margin-top: 1.5rem;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	padding: 0.05rem;
+	width: 100vw;
+	font-size: 0.7rem;
+	position: ;
 }
 
 button {
-    font-family: var(--title-font);
-    background-color: var(--font-colour);
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+	font-family: var(--title-font);
+	background-color: var(--font-colour);
+	color: white;
+	border: none;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
 }

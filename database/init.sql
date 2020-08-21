@@ -19,13 +19,4 @@ CREATE TABLE posts (
     posted_at TIMESTAMP
 );
 
--- INSERT INTO users (username, location) VALUES
---     ('PoochesGracias', 'London, UK'),
---     ('Mutley', 'Milton Keynes, UK')
-    ;
-
--- INSERT INTO posts (user_id, post_title, text_content, posted_at, image_link) VALUES
---     (1, 'Sausages', 'Seeking canine companion to share sausages with! Pooches Gracias like sausages!!', '1999-01-08 04:05:06 -8:00', 'https://cdn.shopify.com/s/files/1/0248/0377/0450/products/THE_ARCHDUCHESS_1024x1024@2x.jpg?v=1575627310'),
---     (2,toole.log(inpu.validationMessage);
-
 COMMIT;
