@@ -11,7 +11,7 @@ test("Home route", t => {
       .expect("Content-Type", "text/html")
       .end((err, res) => {
         t.error(err);
-        t.equal(res.text.includes("Woofus"), true);
+        t.equal(res.text.includes("Purr-lease"), true);
         t.end();
       });
   });
