@@ -4,7 +4,7 @@ Web link: http://btch-purrlease.herokuapp.com/
 
 ## Introduction
 
-App for single dogs, the app displays dogs looking for friends/partners, users have to sign up and log in to post.
+App for single dogs ANd cats, the app displays users looking for friends/partners, users have to sign up and log in to post.
 
 ## Install Locally:
 
