@@ -51,7 +51,7 @@ function handleInvalidInput(event) {
 	// custom error messages
 	let message = '';
 	if (input.validity.valueMissing) {
-		message = 'Bark! Enter a valid email!';
+		message = 'Bark! Enter something!';
 	} else if (input.validity.tooShort) {
 		message = 'Too short! BARK! BARK!! Add another bark!!';
 	} else if (input.validity.patternMismatch) {
