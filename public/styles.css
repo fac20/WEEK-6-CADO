@@ -1,103 +1,99 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    --primary-colour: hsl(1, 85%, 65%);
-    --secondary-colour: hsl(48, 100%, 70%);
-    --font-colour: hsl(198, 63%, 38%);
-    --secondfont-colour: hsl(170, 40%, 60%);
-    /* cursor: url('chicken.png'), auto; */
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	--primary-colour: hsl(1, 85%, 65%);
+	--secondary-colour: hsl(48, 100%, 70%);
+	--font-colour: hsl(198, 63%, 38%);
+	--secondfont-colour: hsl(170, 40%, 60%);
+	/* cursor: url('chicken.png'), auto; */
 }
 
 header {
-    margin: auto;
-    padding: 2rem;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: url(images/headerbackground.png) no-repeat center center fixed; 
-    background-size: cover;
-    color: var(--primary-colour);
+	margin: auto;
+	padding: 2rem;
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background: url(images/headerbackground.png) no-repeat center center fixed;
+	background-size: cover;
+	color: var(--primary-colour);
 }
 
 main {
-    margin: auto;
+	margin: auto;
 }
 
 .options {
-    margin: 0 auto;
-    width: 40vw;
-    align: center;
-    display: inline-block;
-    text-align: center;
+	margin: 0 auto;
+	width: 40vw;
+	align: center;
+	display: inline-block;
+	text-align: center;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 .messages {
-    margin: 1rem auto;
+	margin: 1rem auto;
 }
 
 .dogpost {
-    margin: 1rem auto;
-    border: 1px solid var(--primary-colour);
-    padding: 1rem;
+	margin: 1rem auto;
+	border: 1px solid var(--primary-colour);
+	padding: 1rem;
 }
 
 /* Desktop styles */
-@media only screen and (min-width: 768px){
-    .forminput {
-        width: 40vw;
-        margin: auto;
-    }
-    .dogpost {
-        max-width: 40vw;
-    }
-    
+@media only screen and (min-width: 768px) {
+	.forminput {
+		width: 40vw;
+		margin: auto;
+	}
+	.dogpost {
+		max-width: 40vw;
+	}
 }
 
 img {
-    height: 0;
+	height: 0;
 }
 
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
 }
 
 .topnav {
-    background-color: hsl(1, 85%, 65%);
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
+	background-color: hsl(1, 85%, 65%);
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
-  
 
 .topnav a {
-    float: left;
-    display: block;
-    color :hsl(48, 100%, 70%);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+	float: left;
+	display: block;
+	color: hsl(48, 100%, 70%);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
 }
-  
- 
+
 .topnav a:hover {
-    background-color: hsl(170, 40%, 60%);
-    color: black;
+	background-color: hsl(170, 40%, 60%);
+	color: black;
 }
-  
- 
+
 .topnav a.active {
-    background-color: hsl(198, 63%, 38%);
-    color: white;
+	background-color: hsl(198, 63%, 38%);
+	color: white;
 }
