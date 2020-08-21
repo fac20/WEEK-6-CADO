@@ -42,15 +42,15 @@ App for single dogs ANd cats, the app displays users looking for friends/partner
 -   [ ] Stretch Goal - to have a time stamp and image loaded as well
 -   [x] Tests for server routes
 -   [ ] Test for database access
--   [ ] Modularisation of db queries
--   [ ] Forms for users to sign up and log in
--   [ ] A form for users to submit data only accessible to logged in users
--   [ ] A page showing all the data
+-   [x] Modularisation of db queries
+-   [x] Forms for users to sign up and log in
+-   [x] A form for users to submit data only accessible to logged in users
+-   [x] A page showing all the data
 -   [ ] A way for logged in users to delete their own data
 -   [ ] Semantic form elements with correctly associated labels
--   [ ] A Postgres database hosted on Heroku
+-   [x] A Postgres database hosted on Heroku
 -   [ ] Not process user input as SQL commands
--   [ ] Hidden environment variables (i.e. not on GitHub)
+-   [x] Hidden environment variables (i.e. not on GitHub)
 
 ## Known Bugs
 
