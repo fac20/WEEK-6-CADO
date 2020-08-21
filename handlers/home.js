@@ -16,11 +16,3 @@ function homeHandler(request, response) {
 }
 
 module.exports = homeHandler;
-
-// else statement? :
-
-// // if (req.headers.cookie && req.headers.cookie.match(/logged_in=true/)) {
-//   const message = 'success!';
-//   res.writeHead(
-//     200,
-//     {

@@ -31,15 +31,6 @@ function submitHandler(request, response) {
 				model.add(username, msgtitle, message);
 				response.writeHead(302, { location: '/' });
 				return response.end();
-
-				// username --> id from users. plug that in with the mesage, and title, with user_id as the id from users
-
-				// // const date = data.get("date");
-
-				// // (if (db.query("SELECT username FROM users WHERE $1"))
-				// //     IF boolean-expression THEN
-				// //     statements
-				// // END IF;
 			}
 		});
 		request.on('error', error => {
