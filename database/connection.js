@@ -7,6 +7,5 @@ if (process.env.NODE_ENV === 'test') {
 }
 
 const db = new pg.Pool({ connectionString: connectStr });
-console.log(db);
 
 module.exports = db;

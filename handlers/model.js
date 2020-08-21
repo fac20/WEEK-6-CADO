@@ -3,7 +3,7 @@ const db = require('./../database/connection');
 function getPostsData() {
 	// move db query to models
 	let dbStr =
-		'SELECT * FROM users INNER JOIN posts ON users.id = posts.user_id ORDER BY posts.id DESC';
+		'SELECT users.username, users.location, users.image_link, posts.post_title, posts.text_content FROM users INNER JOIN posts ON users.id = posts.user_id ORDER BY posts.id DESC';
 	return db.query(dbStr);
 }
 

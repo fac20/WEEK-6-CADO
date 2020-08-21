@@ -25,7 +25,7 @@ function createPosts(object) {
 	let username = object.username;
 	let postTitle = object.post_title;
 	let textContent = object.text_content;
-	let time = object.posted_at;
+	let location = object.location;
 	let imgSrc = object.image_link;
 
 	// cloning the template on index.html
@@ -38,15 +38,16 @@ function createPosts(object) {
 	const h3 = newPost.querySelector('.dogpost__msgtitle');
 	const message = newPost.querySelector('.dogpost__message');
 	const postedBy = newPost.querySelector('.dogpost__details__name');
-	const timePosted = newPost.querySelector('.dogpost__details__time');
+	const locationPosted = newPost.querySelector('.dogpost__details__location');
 	const portrait = newPost.querySelector('.dogpost__image');
 
 	//inserting database values to template
 	h3.textContent = postTitle;
 	message.textContent = textContent;
 	postedBy.textContent = username;
-	timePosted.textContent = time;
+	locationPosted.textContent = location;
 	portrait.src = imgSrc;
+	portrait.alt = username;
 
 	//place template on page
 	messageBoard.appendChild(newPost);
