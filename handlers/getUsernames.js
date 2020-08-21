@@ -8,7 +8,12 @@ function getUsernamesHandler(request, response) {
     const users = result.rows;
     response.writeHead(200, { "content-type": "text/html" });
     response.end(`${JSON.stringify(users)}`);
-  });
+  })
+  .catch((error) => {
+    console.log(error);
+    response.writeHead(500, {"content-type":"text/html"});
+    response.end("<h1>Something went wrong</h1>")
+  })
 };
 
 module.exports = getUsernamesHandler;

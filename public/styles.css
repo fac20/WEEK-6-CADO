@@ -8,6 +8,7 @@ body {
     --secondfont-colour: hsl(170, 40%, 60%);
     /* cursor: url('chicken.png'), auto; */
 }
+
 header {
     margin: auto;
     padding: 2rem;
@@ -26,8 +27,9 @@ main {
 }
 
 .options {
-    /* margin: 0 auto; */
-    /* width: 40vw; */
+    margin: 0 auto;
+    width: 40vw;
+    align: center;
     display: inline-block;
     text-align: center;
 }
@@ -46,7 +48,7 @@ main {
     padding: 1rem;
 }
 
-
+/* Desktop styles */
 @media only screen and (min-width: 768px){
     .forminput {
         width: 40vw;
@@ -62,3 +64,40 @@ img {
     height: 0;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.topnav {
+    background-color: hsl(1, 85%, 65%);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+  
+
+.topnav a {
+    float: left;
+    display: block;
+    color :hsl(48, 100%, 70%);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+ 
+.topnav a:hover {
+    background-color: hsl(170, 40%, 60%);
+    color: black;
+}
+  
+ 
+.topnav a.active {
+    background-color: hsl(198, 63%, 38%);
+    color: white;
+}

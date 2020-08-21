@@ -1,8 +1,6 @@
-
-
 const submitBtn = document.querySelector("input[type=submit]");
 
-// fetchin for json data
+// fetchin' for json data
 function getPosts() {
   return fetch("/get-posts")
     .then((res) => {
@@ -52,7 +50,6 @@ function createPosts(object) {
 
   //place template on page
   messageBoard.appendChild(newPost);
-
 }
 
 // event listener for reload

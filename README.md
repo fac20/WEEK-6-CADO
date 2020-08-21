@@ -1,5 +1,5 @@
 # WEEK6-CADO :dog:
-Web link: 
+Web link: http://btch-purrlease.herokuapp.com/
 
 ## Introduction
 App for single dogs, the app displays dogs looking for friends/partners, users have to sign up and log in to post.
@@ -46,7 +46,8 @@ App for single dogs, the app displays dogs looking for friends/partners, users h
 - [ ] Hidden environment variables (i.e. not on GitHub)
 
 ## Known Bugs
-- [ ] Same username cannot be put in twice
+- [ ] Same username cannot be put in twice for sign up
+- [ ] Login username cannot be something not already on the database
 
 ## Database Schema
 ![](https://user-images.githubusercontent.com/59407030/90230786-fc7bbf00-de11-11ea-8141-0aa1f2c97cce.png)
