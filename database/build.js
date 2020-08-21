@@ -1,5 +1,4 @@
 //file to initialise a new testing database before each test
-const fs = require('fs');
 const path = require('path');
 const db = require('./connection');
 const initPath = path.join(__dirname, '..', 'test', 'init.sql');
