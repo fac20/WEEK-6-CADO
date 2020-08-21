@@ -1,7 +1,6 @@
-const logoutBtn = document.querySelector('#logout-button');
 const submitBtn = document.querySelector('input[type=submit]');
 
-// fetchin for json data
+// fetchin' for json data
 function getPosts() {
 	return fetch('/get-posts')
 		.then(res => {
