@@ -1,43 +1,49 @@
 const path = require("path");
-const build = require("..", "database", "build");
-const db = require("..", "database", "connection");
+const build = require("../database/build");
+const db = require("../database/connection");
 const test = require("tape");
-const { create } = require("domain");
-const { getPostsData, add, createUser, getUser, getAllUsernames } = require("..", "handlers", "model");
+//const { create } = require("domain");
+const { getPostsData, add, createUser, getUser, getAllUsernames } = require("../handlers/model");
 
-/* test for getting all usernames
+//test for getting all usernames
 test("Can get all usernames", (t) => {
-    build().then(() => {
+    build().then((x) => {
+      console.log(getAllUsernames(x))
       getAllUsernames().then((users) => {
+        console.log(users)
         const firstUser = users[0];
-        t.equal(firstUser.username, "Kitty");
-        t.equal(firstUser.location, "Your Heart");
+        t.equal(firstUser.username, "TestDoggy");
+        t.equal(firstUser.location, "Testland, UK");
         t.end();
       })
       .catch((error) => {
         t.error(error);
         t.end();
       })
-    });
+    })
+    .catch((buildError) => {
+        t.error(buildError);
+        t.end();
+      });
 });
-*/
 
-test("Can get all posts", (t) => {
-  console.log("before build!");
-    build().then(() => {
-    console.log("after build!");
-      getPostsData
-        .then((posts) => {
-          const firstPost = posts[0];
-          t.equal(firstPost["post_title"], "Seeking a friend to help me test my sausages");
-          t.end();
-        })
-        .catch((error) => {
-          t.error(error);
-          t.end();
-        });
-    });
-  });
+
+// test("Can get all posts", (t) => {
+//   console.log("before build!");
+//     build().then(() => {
+//     console.log("after build!");
+//       getPostsData
+//         .then((posts) => {
+//           const firstPost = posts[0];
+//           t.equal(firstPost["post_title"], "Seeking a friend to help me test my sausages");
+//           t.end();
+//         })
+//         .catch((error) => {
+//           t.error(error);
+//           t.end();
+//         });
+//     });
+//   });
 
   // test("Can create a new user", (t) => {
   //   build().then(() => {

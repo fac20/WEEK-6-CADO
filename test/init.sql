@@ -20,7 +20,7 @@ CREATE TABLE posts (
 );
 
 INSERT INTO users (username, password, location, image_link) VALUES
-    ('TestDoggy', '1234abc', 'Testland, UK', 'https://cdn.shopify.com/s/files/1/0248/0377/0450/products/THE_ARCHDUCHESS_1024x1024@2x.jpg?v=1575627310' ),
+    ('TestDoggy', 'abcabcabcabd', 'Testland, UK', 'https://cdn.shopify.com/s/files/1/0248/0377/0450/products/THE_ARCHDUCHESS_1024x1024@2x.jpg?v=1575627310' ),
     ('TestFriend', '1234abc', 'testfriendly','Test Keynes, UK', 'https://i.etsystatic.com/15257668/r/il/25d670/1972903387/il_570xN.1972903387_9fx0.jpg')
     ;
 
