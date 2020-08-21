@@ -28,6 +28,8 @@ test("Can get all usernames", (t) => {
 });
 
 
+//leave in commented tests as we will get them working one by one
+
 // test("Can get all posts", (t) => {
 //   console.log("before build!");
 //     build().then(() => {
