@@ -8,6 +8,7 @@ body {
     --secondfont-colour: hsl(170, 40%, 60%);
     /* cursor: url('chicken.png'), auto; */
 }
+
 header {
     margin: auto;
     padding: 2rem;
@@ -24,14 +25,6 @@ header {
 main {
     margin: auto;
 }
-
-#logout-button {
-     margin-top: 1rem;
-     margin-right: 1rem;
-     position:absolute;
-     top:0;
-     right:0;
-  }
 
 .options {
     margin: 0 auto;
@@ -55,7 +48,7 @@ main {
     padding: 1rem;
 }
 
-
+/* Desktop styles */
 @media only screen and (min-width: 768px){
     .forminput {
         width: 40vw;
@@ -84,10 +77,10 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-  }
+}
   
 
-  .topnav a {
+.topnav a {
     float: left;
     display: block;
     color :hsl(48, 100%, 70%);
@@ -95,16 +88,16 @@ nav {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
+}
   
  
-  .topnav a:hover {
+.topnav a:hover {
     background-color: hsl(170, 40%, 60%);
     color: black;
-  }
+}
   
  
-  .topnav a.active {
+.topnav a.active {
     background-color: hsl(198, 63%, 38%);
     color: white;
-  }
+}
