@@ -1,4 +1,4 @@
-# WEEK6-CADO :dog:
+# WEEK6-CADO :dog: :cat:
 
 Web link: http://btch-purrlease.herokuapp.com/
 
@@ -59,7 +59,8 @@ App for single dogs, the app displays dogs looking for friends/partners, users h
 
 ## Database Schema
 
-![](https://user-images.githubusercontent.com/59407030/90230786-fc7bbf00-de11-11ea-8141-0aa1f2c97cce.png)
+
+![](https://user-images.githubusercontent.com/59407030/90888639-90b7ca00-e3ae-11ea-974d-1fee647cb151.png)
 
 ## Non-tech Stack
 
