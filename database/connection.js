@@ -1,11 +1,12 @@
-require("dotenv").config();
+const dotenv = require("dotenv").config();
 const pg = require("pg");
-const connectStr = process.env.DATABASE_URL;
+let connectStr = process.env.DATABASE_URL;
 
 if (process.env.NODE_ENV === "test") {
-  connectionString = process.env.TEST_DATABASE_URL;
+  connectStr = process.env.TEST_DATABASE_URL;
 }
 
 const db = new pg.Pool({ connectionString: connectStr });
+console.log(db);
 
 module.exports = db;
