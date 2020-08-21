@@ -1,3 +1,4 @@
+//file to initialise a new testing database before each test
 const fs = require("fs");
 const path = require("path");
 const db = require("./connection");
