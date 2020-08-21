@@ -7,8 +7,8 @@ const { getPostsData, add, createUser, getUser, getAllUsernames } = require("../
 
 //test for getting all usernames
 test("Can get all usernames", (t) => {
-    build().then((x) => {
-      console.log(getAllUsernames(x))
+    build() => {
+      console.log(getAllUsernames())
       getAllUsernames().then((users) => {
         console.log(users)
         const firstUser = users[0];

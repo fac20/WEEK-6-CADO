@@ -1,72 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./public/styles.css" rel="stylesheet" />
-    <script src="./public/loginscript.js" defer></script>
-    <title>Login/Sign Up</title>
-  </head>
-  <body>
-    <nav class="topnav">
-      <a class="active" href="getinhere">Log In / Sign Up</a>
-        <a href="/">Home</a>
-        <a href="/logout">Logout</a>
-    </nav>
-    <header>
-      <h1>B!tch, Purr-lease!</h1>
-    </header>
-    <main>
-      <section class="options">
-        <!-- options create user or login -->
-        <p>New pup on the block?</p>
-        <button id="signUpBtn">Sign Up</button><br />
-        <p>Continue hunting</p>
-        <button id="logInBtn">Log In</button>
-      </section>
-      <section class="forminput">
-        <!-- both forms -->
-        <form class="forminput__signup hidden" action="/sign-up" method="POST" novalidate>
-          <fieldset>
-              <legend>Find your fluffy partner here:</legend>
-              <label for="usernamesu">Username:<span aria-hidden="true">*</span></label><br>
-              <input type="text" name="usernamesu" id="usernamesu" placeholder="Woofus" aria-describedby="usernameRequirements usernamesuError" maxlength="20" required><br> 
-              <div id="usernameRequirements">
-                Usernames must be no longer than 20 characters.
-              </div><br>
-              <div id="usernamesuError"></div><br>
-              <label for="passwordsu">
-                Password:<span aria-hidden="true">*</span>
-              </label><br>
-              <input type="password" pattern=".*\d.*" minlength="8" name="passwordsu" id="passwordsu" aria-describedby="passwordsuRequirements passwordsuError" required><br>
-              <div id="passwordsuRequirements">
-                Passwords must contain at least one letter and one number, and contain at
-                least 8 characters.
-              </div><br>
-              <div id="passwordsuError"></div><br>
-              <label for="location">Location:<span aria-hidden="true">*</span></label><br>
-              <input type="location" name="location" id="location" aria-describedby="locationRequirements" maxlength="30" required><br>
-              <div id="locationRequirements">
-                Locations must be no longer than 30 characters.
-              </div><br>
-              <div id="locationError"></div><br>
-              <label for="imageurl">Picture URL:</label><br>
-              <input type="url" name="imageurl" id="imageurl"><br>
-              <input type="submit">
-          </fieldset>
-        </form>
-        <form class="forminput__login hidden" action="/log-in" method="POST" novalidate>
-          <fieldset>
-              <legend>Continue hunting here:</legend>
-              <label for="usernameli">Username:</label><br>
-              <input type="text" name="usernameli" id="usernameli" maxlength="20" required placeholder="Woofus"><br> 
-              <div id="usernameliError"></div><br>
-              <label for="passwordli">Password:</label><br>
-              <input type="password" name="passwordli" id="passwordli" required><br>
-              <input type="submit">
-          </fieldset>
-      </form>  
-      </section>
-    </main>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="./public/styles.css" rel="stylesheet" />
+		<script src="./public/loginscript.js" defer></script>
+		<title>Login/Sign Up</title>
+	</head>
+	<body>
+		<nav class="topnav">
+			<a class="active" href="getinhere">Log In / Sign Up</a>
+			<a href="/">Home</a>
+			<a href="/logout">Logout</a>
+		</nav>
+		<header>
+			<h1>B!tch, Purr-lease!</h1>
+		</header>
+		<main>
+			<section class="options">
+				<!-- options create user or login -->
+				<p>New pup on the block?</p>
+				<button id="signUpBtn">Sign Up</button><br />
+				<p>Continue hunting</p>
+				<button id="logInBtn">Log In</button>
+			</section>
+			<section class="forminput">
+				<!-- both forms -->
+				<form
+					class="forminput__signup hidden"
+					action="/sign-up"
+					method="POST"
+					novalidate
+				>
+					<fieldset>
+						<legend>Find your fluffy partner here:</legend>
+						<label for="usernamesu"
+							>Username:<span aria-hidden="true">*</span></label
+						><br />
+						<input
+							type="text"
+							name="usernamesu"
+							id="usernamesu"
+							placeholder="Woofus"
+							aria-describedby="usernameRequirements usernamesuError"
+							maxlength="20"
+							required
+						/><br />
+						<div id="usernameRequirements">
+							Usernames must be no longer than 20 characters.
+						</div>
+						<br />
+						<div id="usernamesuError"></div>
+						<br />
+						<label for="passwordsu">
+							Password:<span aria-hidden="true">*</span> </label
+						><br />
+						<input
+							type="password"
+							pattern=".*\d.*"
+							minlength="8"
+							name="passwordsu"
+							id="passwordsu"
+							aria-describedby="passwordsuRequirements passwordsuError"
+							required
+						/><br />
+						<div id="passwordsuRequirements">
+							Passwords must contain at least one letter and one
+							number, and contain at least 8 characters.
+						</div>
+						<br />
+						<div id="passwordsuError"></div>
+						<br />
+						<label for="location"
+							>Location:<span aria-hidden="true">*</span></label
+						><br />
+						<input
+							type="location"
+							name="location"
+							id="location"
+							aria-describedby="locationRequirements"
+							maxlength="30"
+							required
+						/><br />
+						<div id="locationRequirements">
+							Locations must be no longer than 30 characters.
+						</div>
+						<br />
+						<div id="locationError"></div>
+						<br />
+						<label for="imageurl">Picture URL:</label><br />
+						<input type="url" name="imageurl" id="imageurl" /><br />
+						<input type="submit" />
+					</fieldset>
+				</form>
+				<form
+					class="forminput__login hidden"
+					action="/log-in"
+					method="POST"
+					novalidate
+				>
+					<fieldset>
+						<legend>Continue hunting here:</legend>
+						<label for="usernameli">Username:</label><br />
+						<input
+							type="text"
+							name="usernameli"
+							id="usernameli"
+							maxlength="20"
+							required
+							placeholder="Woofus"
+						/><br />
+						<div id="usernameliError"></div>
+						<br />
+						<label for="passwordli">Password:</label><br />
+						<input
+							type="password"
+							name="passwordli"
+							id="passwordli"
+							required
+						/><br />
+						<input type="submit" />
+					</fieldset>
+				</form>
+			</section>
+		</main>
+	</body>
 </html>

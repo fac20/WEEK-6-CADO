@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B!tch Please</title>
-    <link rel="stylesheet" href="./public/styles.css">
-    <script src="./public/script.js" defer></script>
-</head>
-<body>
-    <nav class="topnav">
-        <a href="/getinhere">Log In / Sign Up</a>
-        <a class="active" href="/">Home</a>
-        <a href="/logout">Logout</a>
-    </nav>
-    <header>
-        <h1>B!tch, Purr-lease!</h1>
-        <h2>Dogs deserve to find love too!</h2>
-    </header>
-    <main>
-        <section class="forminput">
-        <h2>Find Love: Fill in your details!</h2>
-            <form class="forminput__form" action="/submit" method="POST">
-                <fieldset>
-                    <legend>Find your doggo partner here:</legend>
-                    <label for="msgtitle">Title:</label><br>
-                    <input type="text" name="msgtitle" id="msgtitle" placeholder="Hello..?" required><br>
-                    <label for="message">Message:</label><br>
-                    <textarea name="message" id="message" rows="10" cols="30" placeholder="Is it me you're woofing for ..." required></textarea><br>
-                    <input name="date" type="hidden">
-                    <input name="time" type="hidden">
-                    <input type="submit">
-                </fieldset>
-            </form>
-        </section>
-        <section class="messages">
-        <h2>Love Board: Looking for the one</h2>
-        </section>
-    </main>
-    <template>
-      <article class="dogpost">
-        <h3 class="dogpost__msgtitle">Looking for someone to walk in the park with</h3>
-        <p class="dogpost__message">Woof! I'm Kenny and I love my kennel. Other things I love are long walks and LEAF my owner, Jack. Looking for LEAF someone to run around with in the park and chase squirrels.</p>
-        <p class="dogpost__details">Posted by <em class="dogpost__details__name">Kenny</em> at <em class="dogpost__details__time">2pm, 11/08/2020</em></p>
-        <img class="dogpost__image" src="" alt="">
-      </article>
-    </template>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>B!tch Please</title>
+		<link rel="stylesheet" href="./public/styles.css" />
+		<script src="./public/script.js" defer></script>
+	</head>
+	<body>
+		<nav class="topnav">
+			<a href="/getinhere">Log In / Sign Up</a>
+			<a class="active" href="/">Home</a>
+			<a href="/logout">Logout</a>
+		</nav>
+		<header>
+			<h1>B!tch, Purr-lease!</h1>
+			<h2>Dogs deserve to find love too!</h2>
+		</header>
+		<main>
+			<section class="forminput">
+				<h2>Find Love: Fill in your details!</h2>
+				<form class="forminput__form" action="/submit" method="POST">
+					<fieldset>
+						<legend>Find your doggo partner here:</legend>
+						<label for="msgtitle">Title:</label><br />
+						<input
+							type="text"
+							name="msgtitle"
+							id="msgtitle"
+							placeholder="Hello..?"
+							required
+						/><br />
+						<label for="message">Message:</label><br />
+						<textarea
+							name="message"
+							id="message"
+							rows="10"
+							cols="30"
+							placeholder="Is it me you're woofing for ..."
+							required
+						></textarea
+						><br />
+						<input name="date" type="hidden" />
+						<input name="time" type="hidden" />
+						<input type="submit" />
+					</fieldset>
+				</form>
+			</section>
+			<section class="messages">
+				<h2>Love Board: Looking for the one</h2>
+			</section>
+		</main>
+		<template>
+			<article class="dogpost">
+				<h3 class="dogpost__msgtitle">
+					Looking for someone to walk in the park with
+				</h3>
+				<p class="dogpost__message">
+					Woof! I'm Kenny and I love my kennel. Other things I love
+					are long walks and LEAF my owner, Jack. Looking for LEAF
+					someone to run around with in the park and chase squirrels.
+				</p>
+				<p class="dogpost__details">
+					Posted by <em class="dogpost__details__name">Kenny</em> at
+					<em class="dogpost__details__time">2pm, 11/08/2020</em>
+				</p>
+				<img class="dogpost__image" src="" alt="" />
+			</article>
+		</template>
+	</body>
 </html>
